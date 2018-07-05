@@ -22,8 +22,7 @@ while True:
 *******************************************
 SUMA                           OPERADOR "+"
 RESTA                          OPERADOR "-"
-DIVISION                       OPERADOR "/"
-EXPONENTE                    OPERADOR "EXP"
+VER RESULTADO                  OPERADOR "="
 *******************************************
 *******************************************""")
     
@@ -37,7 +36,7 @@ EXPONENTE                    OPERADOR "EXP"
     print(acum)
     while True:
         oper=input("Introduzca operador: ")
-        while oper!="+" and oper!="-" and oper!="/" and oper!="EXP" and oper!="=":
+        while oper!="+" and oper!="-" and oper!="=":
             oper=input("Introduzca un operador válido: ")
         if oper=="+":
             matr=crea_matriz(fil,col)
@@ -47,14 +46,6 @@ EXPONENTE                    OPERADOR "EXP"
             matr=crea_matriz(fil,col)
             matri=np.array([matr],float)
             acum-=matri
-        elif oper=="/":
-            matr=crea_matriz(fil,col)
-            matri=np.array([matr],float)
-            acum/=matri
-        elif oper=="EXP":
-            matr=crea_matriz(fil,col)
-            matri=np.array([matr],float)
-            acum**=matri
         elif oper=="=":
             print("MATRIZ RESULTADO")
             print(acum)
@@ -66,7 +57,3 @@ EXPONENTE                    OPERADOR "EXP"
     matr=0
     subprocess.call(["cmd.exe","/C","cls"])
         
-
-    
-
-
