@@ -22,7 +22,6 @@ while True:
     col=OKI(input("Indique número de columnas: "))
 
     f=-1;c=-1
-    #mat=[]
     acum=0
     matr=crea_matriz(fil,col,f,c)
     acum=np.array([matr],float)
