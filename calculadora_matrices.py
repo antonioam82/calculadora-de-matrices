@@ -6,10 +6,10 @@ import subprocess
 def crea_matriz(fil,col):
     f=-1;c=-1
     e_fil=[]
-    for f in range(0,fil):
+    for f in range(fil):
         e_col=[]
         f+=1
-        for c in range(0,col):
+        for c in range(col):
             c+=1
             valor=OK(input('Introduzca el componente (%d,%d): '%(f,c)))
             e_col.append(valor)
