@@ -14,7 +14,6 @@ def crea_matriz(fil,col):
             valor=OK(input('Introduzca el componente (%d,%d): '%(f,c)))
             e_col.append(valor)
         e_fil.append(e_col)
-    #print(e_fil)
     return e_fil
     
 while True:
@@ -43,16 +42,16 @@ VER RESULTADO                  OPERADOR "="
             oper=input("Introduzca un operador válido: ")
         if oper=="+":
             matr=crea_matriz(fil,col)
-            matri=np.array([matr],float)
+            matri=np.array(matr,float)
             acum=acum+matri
         elif oper=="-":
             matr=crea_matriz(fil,col)
-            matri=np.array([matr],float)
+            matri=np.array(matr,float)
             acum=acum-matri
         elif oper=="*":
             fil=col
             matr=crea_matriz(fil,col)
-            matri=np.array([matr],float)
+            matri=np.array(matr,float)
             acum=np.dot(acum,matri)
             fil=e
         elif oper=="=":
