@@ -30,7 +30,7 @@ VER RESULTADO                  OPERADOR "="
     fil=OKI(input("Indique número de filas: "))
     col=OKI(input("Indique número de columnas: "))
     e=fil
-    
+    #c=col
     f=-1;c=-1
     acum=0
     matr=crea_matriz(fil,col)
@@ -50,10 +50,12 @@ VER RESULTADO                  OPERADOR "="
             acum=acum-matri
         elif oper=="*":
             fil=col
+            col=OKI(input("Introduce número de columnas: "))
             matr=crea_matriz(fil,col)
             matri=np.array(matr,float)
             acum=np.dot(acum,matri)
             fil=e
+            #col=c
         elif oper=="=":
             print("")
             print("MATRIZ RESULTADO")
@@ -67,3 +69,5 @@ VER RESULTADO                  OPERADOR "="
     matr=0
     subprocess.call(["cmd.exe","/C","cls"])       
     
+
+
