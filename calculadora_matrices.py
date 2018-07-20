@@ -14,7 +14,8 @@ def crea_matriz(fil,col):
             valor=OK(input('Introduzca el componente (%d,%d): '%(f,c)))
             e_col.append(valor)
         e_fil.append(e_col)
-    return e_fil
+        matri=np.array(e_fil,float)
+    return matri
     
 while True:
     print("         CALCULADORA DE MATRICES          ") 
@@ -34,7 +35,7 @@ VER RESULTADO                  OPERADOR "="
     f=-1;c=-1
     acum=0
     matr=crea_matriz(fil,col)
-    acum=np.array([matr],float)
+    acum=matr
     print(acum)
     while True:
         oper=input("Introduzca operador: ")
@@ -42,18 +43,15 @@ VER RESULTADO                  OPERADOR "="
             oper=input("Introduzca un operador válido: ")
         if oper=="+":
             matr=crea_matriz(fil,col)
-            matri=np.array(matr,float)
-            acum=acum+matri
+            acum=acum+matr
         elif oper=="-":
             matr=crea_matriz(fil,col)
-            matri=np.array(matr,float)
-            acum=acum-matri
+            acum=acum-matr
         elif oper=="*":
             fil=col
             col=OKI(input("Introduce número de columnas: "))
             matr=crea_matriz(fil,col)
-            matri=np.array(matr,float)
-            acum=np.dot(acum,matri)
+            acum=np.dot(acum,matr)
             fil=e
             #col=c
         elif oper=="=":
@@ -62,12 +60,10 @@ VER RESULTADO                  OPERADOR "="
             print(acum)
             print("")
             break
-        print(matri)
+        print(matr)
     conti=ns(input("¿Reiniciar programa?: "))
     if conti=="n":
         break
     matr=0
     subprocess.call(["cmd.exe","/C","cls"])       
     
-
-
