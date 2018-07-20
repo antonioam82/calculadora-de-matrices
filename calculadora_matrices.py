@@ -33,9 +33,7 @@ VER RESULTADO                  OPERADOR "="
     e=fil
     #c=col
     f=-1;c=-1
-    acum=0
-    matr=crea_matriz(fil,col)
-    acum=matr
+    acum=crea_matriz(fil,col)
     print(acum)
     while True:
         oper=input("Introduzca operador: ")
