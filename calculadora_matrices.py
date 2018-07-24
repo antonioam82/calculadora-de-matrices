@@ -38,6 +38,8 @@ SUMA                           OPERADOR "+"
 RESTA                          OPERADOR "-"
 MULTIPLICACION                 OPERADOR "*"
 VER RESULTADO                  OPERADOR "="
+DATO MATRIZ                    OPERANDO "M"
+DATO NÚMERO                    OPERANDO "N"
 *******************************************
 *******************************************""")
     
@@ -82,3 +84,5 @@ VER RESULTADO                  OPERADOR "="
     matr=0
     subprocess.call(["cmd.exe","/C","cls"])       
     
+
+
