@@ -77,7 +77,7 @@ DATO NÚMERO                    OPERANDO "N"
             print(acum)
             print("")
             break
-        print(acum)
+        print(matr)
     conti=ns(input("¿Reiniciar programa?: "))
     if conti=="n":
         break
