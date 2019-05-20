@@ -1,4 +1,4 @@
-  #IMPORTAMOS LIBRERIAS
+#IMPORTAMOS LIBRERIAS
 import numpy as np
 import subprocess
 
