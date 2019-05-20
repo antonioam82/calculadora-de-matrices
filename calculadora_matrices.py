@@ -1,7 +1,25 @@
-   #IMPORTAMOS LIBRERIAS
-from VALID import OKI, OK, ns
+  #IMPORTAMOS LIBRERIAS
 import numpy as np
 import subprocess
+
+def OKI(n):
+    try:
+        n=int(n)
+    except:
+        n=OKI(input("Caracter no valido: "))
+    return n
+
+def OK(n):
+    try:
+        n=float(n)
+    except:
+        n=OK(input("Caracter no valido: "))
+    return n
+
+def ns(c):
+    while c!=("s") and c!=("n"):
+        print(chr(7));c=input("Escribe solo \'n\' o \'s\' según su opción: ")
+    return(c)
 
 def val(tp):
     while tp!="N" and tp!="M":
@@ -82,7 +100,7 @@ DATO NÚMERO                    OPERANDO "N"
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"])       
+    subprocess.call(["cmd.exe","/C","cls"])   
     
    
     
