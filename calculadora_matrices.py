@@ -1,5 +1,5 @@
-#CALCULADORA DE MATRICES
-from VALID import OK, OKI, ns
+   #IMPORTAMOS LIBRERIAS
+from VALID import OKI, OK, ns
 import numpy as np
 import subprocess
 
@@ -8,6 +8,7 @@ def val(tp):
         tp=input("Introduzca \'N\' para dato numérico y \'M\' para matriz: ")
     return tp
 
+#FUNCIÓN DE TIPO DE DATO
 def dato():
     tipo_dato=val(input("Tipo de dato: "))
     if tipo_dato=="M":
@@ -16,6 +17,7 @@ def dato():
         matr=OK(input("Introduce número: "))
     return matr
 
+#FUNCIÓN PARA DEFINIR MATRIZ
 def crea_matriz(fil,col):
     f=-1;c=-1
     e_fil=[]
@@ -31,7 +33,7 @@ def crea_matriz(fil,col):
     return matri
     
 while True:
-    print("         CALCULADORA DE MATRICES          ") 
+    print("          CALCULADORA DE MATRICES          ") 
     print("""************TABLA DE OPERADORES************
 *******************************************
 SUMA                           OPERADOR "+"
@@ -46,7 +48,6 @@ DATO NÚMERO                    OPERANDO "N"
     fil=OKI(input("Indique número de filas: "))
     col=OKI(input("Indique número de columnas: "))
     e=fil
-    #c=col
     f=-1;c=-1
     acum=dato()
     print(acum)
@@ -72,17 +73,18 @@ DATO NÚMERO                    OPERANDO "N"
                 matr=OK(input("Introduce número: "))
                 acum=acum*matr
         elif oper=="=":
-            print("")
-            print("MATRIZ RESULTADO")
-            print(acum)
-            print("")
+            print("\nMATRIZ RESULTADO")
+            print(acum,"\n")
             break
         print(matr)
+        
     conti=ns(input("¿Reiniciar programa?: "))
     if conti=="n":
         break
     matr=0
     subprocess.call(["cmd.exe","/C","cls"])       
+    
+   
     
 
 
