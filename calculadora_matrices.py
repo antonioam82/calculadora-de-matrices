@@ -1,4 +1,5 @@
-#IMPORTAMOS LIBRERIAS
+#!/usr/bin/python
+# -*- coding: latin-1 -*-
 import numpy as np
 import subprocess
 
