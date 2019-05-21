@@ -68,7 +68,7 @@ DATO NÚMERO                    OPERANDO "N"
     col=OKI(input("Indique número de columnas: "))
     e=fil
     f=-1;c=-1
-    acum=dato()
+    acum=crea_matriz(fil,col)
     print(acum)
     while True:
         oper=input("Introduzca operador: ")
@@ -101,7 +101,7 @@ DATO NÚMERO                    OPERANDO "N"
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"])   
+    subprocess.call(["cmd.exe","/C","cls"])
     
    
     
