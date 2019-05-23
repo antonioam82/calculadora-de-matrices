@@ -1,5 +1,5 @@
-#!/usr/bin/python
-# -*- coding: latin-1 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import numpy as np
 import subprocess
 
@@ -69,7 +69,8 @@ DATO NÚMERO                    OPERANDO "N"
     e=fil
     f=-1;c=-1
     acum=crea_matriz(fil,col)
-    print(acum)
+    print("\nOPERANDO")
+    print(acum,"\n")
     while True:
         oper=input("Introduzca operador: ")
         while oper!="+" and oper!="-" and oper!="*" and oper!="=":
@@ -95,13 +96,16 @@ DATO NÚMERO                    OPERANDO "N"
             print("\nMATRIZ RESULTADO")
             print(acum,"\n")
             break
-        print(matr)
+        print("\nOPERANDO")
+        print(matr,"\n")
         
-    conti=ns(input("¿Reiniciar programa?: "))
+    conti=ns(input("¿Reiniciar cálculos?: "))
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"])
+    subprocess.call(["cmd.exe","/C","cls"])       
+    
+
     
    
     
