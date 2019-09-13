@@ -41,7 +41,7 @@ def crea_matriz(fil,col):
     while True:
         try:
             valores = list(map(float, input("Introduce valores separados por espacios: ").split()))
-            if len(valores)!= fil*col:
+            if len(valores) != fil*col:
                 print("EL NÚMERO DE VALORES INTRODUCIDOS NO SE CORRESPONDE CON LAS DIMENSIONES ESPECIFICADAS")
             else:
                 matriz = np.array(valores).reshape(fil,col)
