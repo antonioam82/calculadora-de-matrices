@@ -39,12 +39,15 @@ def dato():
 #FUNCIÓN PARA DEFINIR MATRIZ
 def crea_matriz(fil,col):
     while True:
-        valores = list(map(float, input("Introduce valores separados por espacio: ").split()))
-        if len(valores)!= fil*col:
-            print("EL NÚMERO DE VALORES INTRODUCIDO NO SE CORRESPONDE CON LAS DIMENSIONES ESPECIFICADAS")
-        else:
-            matriz = np.array(valores).reshape(fil,col)
-            break
+        try:
+            valores = list(map(float, input("Introduce valores separados por espacios: ").split()))
+            if len(valores)!= fil*col:
+                print("EL NÚMERO DE VALORES INTRODUCIDOS NO SE CORRESPONDE CON LAS DIMENSIONES ESPECIFICADAS")
+            else:
+                matriz = np.array(valores).reshape(fil,col)
+                break
+        except:
+            print("DATOS INCORRECTOS")
     return matriz
     
 while True:
