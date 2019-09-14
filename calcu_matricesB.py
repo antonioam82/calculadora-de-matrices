@@ -45,7 +45,7 @@ def crea_matriz(fil,col):
                 matriz = np.array(valores).reshape(fil,col)
                 break
             else:
-                print("EL NÚMERO DE VALORES INTRODUCIDOS NO SE CORRESPONDE CON LAS DIMENSIONES ESPECIFICADAS")
+                print("NUMERO DE VALORES NO CORRESPONDIENTE CON LAS DIMENSIONES ESPECIFICADAS")
         except:
             print("DATOS INCORRECTOS")
     return matriz
