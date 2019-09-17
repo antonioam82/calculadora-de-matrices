@@ -37,10 +37,10 @@ def dato():
     return matr
 
 #FUNCIÓN PARA DEFINIR MATRIZ
-def crea_matriz(fil,col):
+def crea_matriz(fil,col,num):
     while True:
         try:
-            valores = list(map(float, input("Introduce valores separados por espacios: ").split()))
+            valores = list(map(float, input("Introduce "+str(num)+" valores separados por espacios: ").split()))
             if len(valores)== fil*col:
                 matriz = np.array(valores).reshape(fil,col)
                 break
@@ -67,8 +67,9 @@ DATO NÚMERO                    OPERANDO "N"
     col=OKI(input("Indique número de columnas: "))
     e=fil
     f=-1;c=-1
-    acum=crea_matriz(fil,col)
-    print("\nOPERANDO")
+    numVal=fil*col
+    acum=crea_matriz(fil,col,numVal)
+    print("\nMATRIZ CREADA")
     print(acum,"\n")
     while True:
         oper=input("Introduzca operador: ")
@@ -85,7 +86,8 @@ DATO NÚMERO                    OPERANDO "N"
             if tipo_dato=="M":
                 fil=col
                 col=OKI(input("Introduce número de columnas: "))
-                matr=crea_matriz(fil,col)
+                numVal=col**2
+                matr=crea_matriz(fil,col,numVal)
                 acum=np.dot(acum,matr)
                 fil=e
             else:
@@ -95,11 +97,11 @@ DATO NÚMERO                    OPERANDO "N"
             print("\nMATRIZ RESULTADO")
             print(acum,"\n")
             break
-        print("\nOPERANDO")
+        print("\nMATRIZ CREADA")
         print(matr,"\n")
         
     conti=ns(input("¿Reiniciar cálculos?: "))
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"]) 
+    subprocess.call(["cmd.exe","/C","cls"])  
