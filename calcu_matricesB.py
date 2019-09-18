@@ -31,17 +31,17 @@ def val(tp):
 def dato():
     tipo_dato=val(input("Tipo de dato: "))
     if tipo_dato=="M":
-        matr=crea_matriz(fil,col)
+        matr=crea_matriz(fil,col,numVal)
     else:
         matr=OK(input("Introduce número: "))
     return matr
 
 #FUNCIÓN PARA DEFINIR MATRIZ
-def crea_matriz(fil,col):
+def crea_matriz(fil,col,num):
     while True:
         try:
             valores = list(map(float, input("Introduce valores separados por espacios: ").split()))
-            if len(valores)== fil*col:
+            if len(valores)== num:
                 matriz = np.array(valores).reshape(fil,col)
                 break
             else:
@@ -67,7 +67,8 @@ DATO NÚMERO                    OPERANDO "N"
     col=OKI(input("Indique número de columnas: "))
     e=fil
     f=-1;c=-1
-    acum=crea_matriz(fil,col)
+    numVal=fil*col
+    acum=crea_matriz(fil,col,numVal)
     print("\nMATRIZ CREADA")
     print(acum,"\n")
     while True:
@@ -77,15 +78,18 @@ DATO NÚMERO                    OPERANDO "N"
         if oper=="+":
             matr=dato()
             acum=acum+matr
+            numVal=fil*col
         elif oper=="-":
             matr=dato()
             acum=acum-matr
+            numval=fil*col
         elif oper=="*":
             tipo_dato=val(input("Tipo de dato: "))
             if tipo_dato=="M":
                 fil=col
                 col=OKI(input("Introduce número de columnas: "))
-                matr=crea_matriz(fil,col)
+                numVal=fil*col
+                matr=crea_matriz(fil,col,numVal)
                 acum=np.dot(acum,matr)
                 fil=e
             else:
