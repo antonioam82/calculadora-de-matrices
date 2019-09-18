@@ -40,7 +40,7 @@ def dato():
 def crea_matriz(fil,col,num):
     while True:
         try:
-            valores = list(map(float, input("Introduce valores separados por espacios: ").split()))
+            valores = list(map(float, input("Introduce "+str(num)+" valores separados por espacios: ").split()))
             if len(valores)== num:
                 matriz = np.array(valores).reshape(fil,col)
                 break
