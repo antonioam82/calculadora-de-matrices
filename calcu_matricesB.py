@@ -43,15 +43,15 @@ def resultado(m):
 #FUNCIÓN PARA DEFINIR MATRIZ
 def crea_matriz(fil,col,num):
     while True:
-        #try:
-        valores = list(map(float, input("Introduce "+str(num)+" valores separados por espacios: ").split()))
-        if len(valores)== num:
-            matriz = np.array(valores).reshape(fil,col)
-            break
+        try:
+            valores = list(map(float, input("Introduce "+str(num)+" valores separados por espacios: ").split()))
+            if len(valores)== num:
+                matriz = np.array(valores).reshape(fil,col)
+                break
         else:
             print("NUMERO DE VALORES NO CORRESPONDIENTE CON LAS DIMENSIONES ESPECIFICADAS")
-        #except:
-            #print("DATOS INCORRECTOS")
+        except:
+            print("DATOS INCORRECTOS")
     return matriz
     
 while True:
@@ -110,4 +110,4 @@ DATO NÚMERO                    OPERANDO "N"
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"])
+    subprocess.call(["cmd.exe","/C","cls"]) 
