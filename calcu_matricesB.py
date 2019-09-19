@@ -36,6 +36,10 @@ def dato():
         matr=OK(input("Introduce número: "))
     return matr
 
+def resultado(m):
+    print("\nMATRIZ RESULTADO")
+    print(m,"\n")
+
 #FUNCIÓN PARA DEFINIR MATRIZ
 def crea_matriz(fil,col,num):
     while True:
@@ -57,7 +61,7 @@ while True:
 SUMA                           OPERADOR "+"
 RESTA                          OPERADOR "-"
 MULTIPLICACION                 OPERADOR "*"
-VER RESULTADO                  OPERADOR "="
+CLEAR                          OPERADOR "C"
 DATO MATRIZ                    OPERANDO "M"
 DATO NÚMERO                    OPERANDO "N"
 *******************************************
@@ -69,20 +73,21 @@ DATO NÚMERO                    OPERANDO "N"
     f=-1;c=-1
     numVal=fil*col
     acum=crea_matriz(fil,col,numVal)
-    print("\nMATRIZ CREADA")
-    print(acum,"\n")
+    resultado(acum)
     while True:
         oper=input("Introduzca operador: ")
-        while oper!="+" and oper!="-" and oper!="*" and oper!="=":
+        while oper!="+" and oper!="-" and oper!="*" and oper!="C":
             oper=input("Introduzca un operador válido: ")
         if oper=="+":
             matr=dato()
             acum=acum+matr
             numVal=fil*col
+            resultado(acum)
         elif oper=="-":
             matr=dato()
             acum=acum-matr
             numval=fil*col
+            resultado(acum)
         elif oper=="*":
             tipo_dato=val(input("Tipo de dato: "))
             if tipo_dato=="M":
@@ -92,18 +97,16 @@ DATO NÚMERO                    OPERANDO "N"
                 matr=crea_matriz(fil,col,numVal)
                 acum=np.dot(acum,matr)
                 fil=e
+                resultado(acum)
             else:
                 matr=OK(input("Introduce número: "))
                 acum=acum*matr
-        elif oper=="=":
-            print("\nMATRIZ RESULTADO")
-            print(acum,"\n")
+                resultado(acum)
+        elif oper=="C":
             break
-        print("\nMATRIZ CREADA")
-        print(matr,"\n")
         
     conti=ns(input("¿Reiniciar cálculos?: "))
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"])  
+    subprocess.call(["cmd.exe","/C","cls"]) 
