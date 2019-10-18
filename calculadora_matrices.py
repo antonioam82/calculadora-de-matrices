@@ -69,7 +69,7 @@ DATO NÚMERO                    OPERANDO "N"
     e=fil
     f=-1;c=-1
     acum=crea_matriz(fil,col)
-    print("\nOPERANDO")
+    print("\nMATRIZ CREADA")
     print(acum,"\n")
     while True:
         oper=input("Introduzca operador: ")
@@ -96,7 +96,7 @@ DATO NÚMERO                    OPERANDO "N"
             print("\nMATRIZ RESULTADO")
             print(acum,"\n")
             break
-        print("\nOPERANDO")
+        print("\nMATRIZ CREADA")
         print(matr,"\n")
         
     conti=ns(input("¿Reiniciar cálculos?: "))
