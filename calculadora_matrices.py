@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import numpy as np
-import subprocess
+import os
+
+if os.name == "posix":
+    var = "clear"
+elif os.name == "ce" or os.name == "nt" or os.name == "dos":
+    var = "cls"
 
 def OKI(n):
     try:
@@ -38,6 +43,7 @@ def dato():
 
 #FUNCIÓN PARA DEFINIR MATRIZ
 def crea_matriz(fil,col):
+    print("")
     f=-1;c=-1
     e_fil=[]
     for f in range(fil):
@@ -57,23 +63,23 @@ while True:
 *******************************************
 SUMA                           OPERADOR "+"
 RESTA                          OPERADOR "-"
-MULTIPLICACION                 OPERADOR "*"
-VER RESULTADO                  OPERADOR "="
+MULTIPLICACIÓN                 OPERADOR "*"
+FINALIZAR CALCULO              OPERADOR "C"
 DATO MATRIZ                    OPERANDO "M"
 DATO NÚMERO                    OPERANDO "N"
 *******************************************
-*******************************************""")
+*******************************************\n""")
     
     fil=OKI(input("Indique número de filas: "))
     col=OKI(input("Indique número de columnas: "))
     e=fil
     f=-1;c=-1
     acum=crea_matriz(fil,col)
-    print("\nMATRIZ CREADA")
+    print("\nRESULTADO")
     print(acum,"\n")
     while True:
         oper=input("Introduzca operador: ")
-        while oper!="+" and oper!="-" and oper!="*" and oper!="=":
+        while oper!="+" and oper!="-" and oper!="*" and oper!="C":
             oper=input("Introduzca un operador válido: ")
         if oper=="+":
             matr=dato()
@@ -92,19 +98,19 @@ DATO NÚMERO                    OPERANDO "N"
             else:
                 matr=OK(input("Introduce número: "))
                 acum=acum*matr
-        elif oper=="=":
-            print("\nMATRIZ RESULTADO")
+                
+        if oper!="C":
+            print("\nRESULTADO")
             print(acum,"\n")
+
+        else:
             break
-        print("\nMATRIZ CREADA")
-        print(matr,"\n")
         
     conti=ns(input("¿Reiniciar cálculos?: "))
     if conti=="n":
         break
     matr=0
-    subprocess.call(["cmd.exe","/C","cls"])       
-    
+    os.system(var)
 
     
    
