@@ -64,7 +64,7 @@ while True:
 SUMA                           OPERADOR "+"
 RESTA                          OPERADOR "-"
 MULTIPLICACIÓN                 OPERADOR "*"
-DIVISIÓN                       OPERADOR "/"
+MATRIZ INVERSA                 OPERADOR "i"
 FINALIZAR CALCULO              OPERADOR "C"
 DATO MATRIZ                    OPERANDO "M"
 DATO NÚMERO                    OPERANDO "N"
@@ -80,7 +80,7 @@ DATO NÚMERO                    OPERANDO "N"
     print(acum,"\n")
     while True:
         oper=input("Introduzca operador: ")
-        while oper!="+" and oper!="-" and oper!="*" and oper!="C" and oper!="/":
+        while oper!="+" and oper!="-" and oper!="*" and oper!="C" and oper!="i":
             oper=input("Introduzca un operador válido: ")
         if oper=="+":
             matr=dato()
@@ -88,17 +88,16 @@ DATO NÚMERO                    OPERANDO "N"
         elif oper=="-":
             matr=dato()
             acum=acum-matr
-        elif oper=="*" or oper=="/":
+        elif oper=="i":
+            acum=np.linalg.inv(acum)
+        elif oper=="*":
             tipo_dato=val(input("Tipo de dato: ").upper())
             if tipo_dato=="M":
                 fil=col
                 col=OKI(input("Introduce número de columnas: "))
                 matr=crea_matriz(fil,col)
-                if oper == "/":
-                    acum=np.dot(acum,np.linalg.inv(matr))
-                else:
-                    acum=np.dot(acum,matr)
-                fil=e
+                acum=np.dot(acum,matr)
+                fil = e
             else:
                 matr=OK(input("Introduce número: "))
                 acum=acum*matr
