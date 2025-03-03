@@ -2,24 +2,24 @@
 
 using namespace std;
 
-char continuar(){
-    char conti;
+char setOperation(){
+    char oper;
 
     cout << "\n";
-    while((conti != 'Y') & (conti != 'N')){
-        cout << "Desea continuar? (N/Y): ";
-        cin >> conti;
+    while((oper != '+') & (oper != '-') & (oper != '=')){
+        cout << "Introduce operacion: ";
+        cin >> oper;
     }
-    return conti;
+    return oper;
 }
 
 
 int main()
 {
     int matriz[100][100], filas, columnas;
-    char conti = 'Y';
+    char operation;
 
-    while(conti == 'Y'){
+    while(operation != '='){
         cout << "Introduce numero de filas: ";
         cin >> filas;
         cout << "Introduce numero de columnas: ";
@@ -40,7 +40,16 @@ int main()
             }
             cout << "\n";
         }
-        conti = continuar();
-    }
+        operation = setOperation();
+        cout << "\n";
+        if(operation == '+'){
+            cout << "La operacion seleccionada es una suma" << endl;
+        }else if(operation == '-'){
+            cout << "La opercion seleccionada es una resta" << endl;
+        }else if(operation == '='){
+            cout << "La opercion seleccionada es mostrar resultado y salir" << endl;
+        }
+
+        }
     return 0;
 }
